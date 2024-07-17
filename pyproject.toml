@@ -1,0 +1,38 @@
+[project]
+name = "diff-sampler"
+dynamic = ["version"]
+description = "An open-source toolbox for fast sampling of diffusion models."
+authors = [{ name = "diff-sampler" }]
+dependencies = []
+readme = "README.md"
+requires-python = ">= 3.8"
+keywords = ["diffusion", "pytorch", "sampler"]
+
+[project.urls]
+Homepage = "https://arxiv.org/abs/2312.00094"
+Repository = "https://github.com/zju-pi/diff-sampler"
+
+[build-system]
+requires = ["setuptools>=61.0.0", "setuptools_scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "setuptools>=69.5.1",
+    "setuptools_scm>=8.1.0",
+    "wheel>=0.43.0",
+]
+
+[tool.setuptools_scm]
+write_to = "amed-solver-main/_version.py"
+version_scheme = "post-release"
+local_scheme = "dirty-tag"
+
+# [tool.setuptools.packages.find]
+# include = ["amed-solver-main", "diff-solvers-main", "gits-main"]
+
+[tool.setuptools.package-dir]
+"diff_sampler.amed_solver" = "amed-solver-main"
+"diff_sampler.diff_solvers" = "diff-solvers-main"
+"diff_sampler.gits" = "gits-main"
